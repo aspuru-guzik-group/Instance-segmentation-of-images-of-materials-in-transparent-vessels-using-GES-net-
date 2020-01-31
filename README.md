@@ -9,17 +9,23 @@ Combination of three nets that act modular way to create semantically and instan
 
 
 1. Download the pre-trained system from [here]() or train the nets according to the instructions in the training section.
-2. Set path to the folder with the input image to the: InputDir parameter.
-3. Set path to the folder with the output annotations will be saved to the: OutDir parameter.
+2. Set path to the folder of the input image to the: InputDir parameter.
+3. Set path to the folder where the output annotations will be saved to the: OutDir parameter.
 4. Run.py 
 
 
 ## Additional parameters:
 VesIOUthresh: Quality threshold for predicted vessel instance to be accepted.
-MatIOUthresh: Quality threshold for predicted material instance to be accepted
+MatIOUthresh: Quality threshold for predicted material instance to be accepted.
+
 NumVessCycles: Number of attempts to search for vessel instance, increase the probability to find vessel but also running time
+
 NumMatCycles: Number of attempts to search for material instance, increase the probability to find material phase but also running time
+
 UseIsVessel: Only If the vessel instance net was trained with COCO, it could predict whether the instance belongs to a vessel or not, which can help to remove a false segment.
+If you trained the net yourself set paths to the trained model weight in:
+SemanticNetTrainedModelPath,  InstanceVesselNetTrainedModelPath,  InstanceMaterialNetTrainedModelPath 
+for semantic vessel and materials net models respectively
 
 
 # Training
