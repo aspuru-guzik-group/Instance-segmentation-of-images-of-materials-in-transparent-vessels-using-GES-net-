@@ -12,7 +12,7 @@ Fully trained system can be download from [1](https://drive.google.com/file/d/1A
 # Running prediction
 
 
-1. Download the pre-trained system from [1](https://drive.google.com/file/d/1A4o48r912S-yAgZHa1dcg4qXCp8ffqSc/view?usp=sharing) or from [2](https://drive.google.com/file/d/1ZnEp_TwB0iUOVuSQ-YEXqfHzF5I08ryH/view?usp=sharing) or train the nets according to the instructions in the training section.
+1. Download the pre-trained system from [here](https://drive.google.com/file/d/1A4o48r912S-yAgZHa1dcg4qXCp8ffqSc/view?usp=sharing) or from [here](https://drive.google.com/file/d/1ZnEp_TwB0iUOVuSQ-YEXqfHzF5I08ryH/view?usp=sharing) or train the nets according to the instructions in the training section.
 2. Set path to the folder of the input image to the: InputDir parameter.
 3. Set path to the folder where the output annotations will be saved to the: OutDir parameter.
 4. Run.py 
