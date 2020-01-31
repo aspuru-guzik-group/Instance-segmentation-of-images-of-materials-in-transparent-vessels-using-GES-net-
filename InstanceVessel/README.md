@@ -5,8 +5,8 @@
 The net split region of the vessels in the image to individual vessels (Figure 1). Vessels consist of general glass or transparent vessels, such as glass bottles and other glassware used in a lab (might also work on none transparent vessel). This net runs as part of the hierarchical model that is described in the parent folder. Training is done on the [LabPics Dataset](https://drive.google.com/file/d/1TZao7JDzxcJr_hMqYHLRcV2N0UHoH2c1/view?usp=sharing)
 
 
-## Running folder
-Run in a hierarchical manner using several other nets. See the parent folder.
+## Running
+Run in a hierarchical manner using several other nets. See the parent folder for more details.
 
 
 # Training
