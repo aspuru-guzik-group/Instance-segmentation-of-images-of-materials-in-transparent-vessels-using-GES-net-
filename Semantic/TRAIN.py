@@ -40,7 +40,7 @@ MAX_ITERATION = int(10000000010) # Max  number of training iteration
 InitStep=0
 #-----------------Generate evaluator class for net evaluating------------------------------------------------------------------------------------------------------------------------------------------------
 
-Eval=Evaluator.Evaluator(ChemTestDir,TrainedModelWeightDir+"/Evaluat.txt")
+Eval=Evaluator.Evaluator(ChemTestDir,TrainedModelWeightDir+"/Evaluat.xls")
 
 #----------------------------------------Create reader for /labpics data set--------------------------------------------------------------------------------------------------------------
 ChemReader=ChemReader.Reader(MainDir=ChemTrainDir,MaxBatchSize=MaxBatchSize,MinSize=MinSize,MaxSize=MaxSize,MaxPixels=MaxPixels,TrainingMode=True)
@@ -145,7 +145,7 @@ for itr in range(InitStep,MAX_ITERATION): # Main training loop
         Learning_Rate-= Learning_Rate_Decay
         if Learning_Rate<=1e-7:
             Learning_Rate_Init-=2e-6
-            if Learning_Rate_Init<1e-6: Learning_Rate_Init=2e-6
+            if Learning_Rate_Init<1e-6: Learning_Rate_Init=1e-6
             Learning_Rate=Learning_Rate_Init*1.00001
             Learning_Rate_Decay=Learning_Rate/20
         print("Learning Rate="+str(Learning_Rate)+"   Learning_Rate_Init="+str(Learning_Rate_Init))

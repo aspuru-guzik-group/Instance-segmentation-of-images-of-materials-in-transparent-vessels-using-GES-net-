@@ -71,7 +71,7 @@ class Net(nn.Module):
                     self.OutLayersList.append(self.OutLayersDict[nm])
 
 ##########################################Run inference################################################################################################################
-    def forward(self,Images,UseGPU=True,TrainMode=True, FreezeBatchNorm_EvalON=False):
+    def forward(self,Images,UseGPU=True,TrainMode=True, FreezeBatchNormStatistics=False):
 
 #----------------------Convert image to pytorch and normalize values-----------------------------------------------------------------
                 RGBMean = [123.68,116.779,103.939]
@@ -83,7 +83,7 @@ class Net(nn.Module):
                     tp=torch.HalfTensor
                    # self.eval()
                 InpImages = torch.autograd.Variable(torch.from_numpy(Images.astype(float)), requires_grad=False).transpose(2,3).transpose(1, 2).type(tp)
-                if FreezeBatchNorm_EvalON==True: self.eval()
+                if FreezeBatchNormStatistics==True: self.eval()
 #---------------Convert to cuda gpu or CPU -------------------------------------------------------------------------------------------------------------------
                 if UseGPU:
                     InpImages=InpImages.cuda()
