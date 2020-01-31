@@ -162,9 +162,9 @@ for itr in range(InitStep,MAX_ITERATION): # Main training loop
     if itr % 10000 == 0 and itr >= StartLRDecayAfterSteps:
         Learning_Rate -= Learning_Rate_Decay
         if Learning_Rate <= 1e-6:
-            Learning_Rate_Init -= 1e-6
-	if Learning_Rate_Init <= 1e-6:
-                Learning_Rate_Init = 2e-6
+               Learning_Rate_Init -= 1e-6
+        if Learning_Rate_Init <= 1e-6:
+               Learning_Rate_Init = 2e-6
         Learning_Rate = Learning_Rate_Init
         Learning_Rate_Decay = Learning_Rate / 20
         print("Learning Rate=" + str(Learning_Rate) + "   Learning_Rate_Init=" + str(Learning_Rate_Init))
