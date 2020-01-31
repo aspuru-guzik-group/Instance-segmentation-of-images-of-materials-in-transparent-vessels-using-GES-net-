@@ -15,6 +15,8 @@ Combination of three nets that act modular way to create semantic and instance a
 
 
 ## Additional parameters:
+UseGPU: To use GPU (with) cuda or CPU (very slow)
+
 If you trained the net yourself set paths to the trained model weight in:
 SemanticNetTrainedModelPath,  InstanceVesselNetTrainedModelPath,  InstanceMaterialNetTrainedModelPath 
 ,  for semantic vessel and materials net models weights respectively
@@ -28,6 +30,8 @@ NumVessCycles: Number of attempts to search for vessel instance, increase the pr
 NumMatCycles: Number of attempts to search for material instance, increase the probability to find material phase but also running time
 
 UseIsVessel: Only If the vessel instance net was trained with COCO, it could predict whether the instance belongs to a vessel or not, which can help to remove a false segment.
+
+
 
 
 
