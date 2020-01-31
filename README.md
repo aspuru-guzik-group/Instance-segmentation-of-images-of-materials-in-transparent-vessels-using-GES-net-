@@ -20,6 +20,7 @@ SemanticNetTrainedModelPath,  InstanceVesselNetTrainedModelPath,  InstanceMateri
 for semantic vessel and materials net models respectively
 
 VesIOUthresh: Quality threshold for predicted vessel instance to be accepted.
+
 MatIOUthresh: Quality threshold for predicted material instance to be accepted.
 
 NumVessCycles: Number of attempts to search for vessel instance, increase the probability to find vessel but also running time
