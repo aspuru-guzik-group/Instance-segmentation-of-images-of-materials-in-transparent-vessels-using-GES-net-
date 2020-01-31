@@ -382,7 +382,7 @@ for name in os.listdir(InputDir): # Scan and annotate all images in input dir
 # =====================================================================Semantic============================================================================================================================================================================
     print("Applying semantic segmentation")
     with torch.autograd.no_grad():
-          OutProbDict,OutLbDict=SemNet.forward(Images=Imgs,TrainMode=False,UseGPU=UseGPU, FreezeBatchNorm_EvalON=FreezeBatchNorm_EvalON) # Run semntic net inference and get prediction
+          OutProbDict,OutLbDict=SemNet.forward(Images=Imgs,TrainMode=False,UseGPU=UseGPU, FreezeBatchNormStatistics=FreezeBatchNorm_EvalON) # Run semntic net inference and get prediction
 
 #==============Create and save annotation map for each class====================================================================================================
 
