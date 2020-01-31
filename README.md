@@ -3,12 +3,14 @@
 
 ## General
 Combination of three nets that act modular way to create semantic and instance aware segmentation of materials in a mostly transparent vessel for chemistry lab and other settings. Vessels correspond to (bottles cups, chemistry lab vessel, and other containers and glassware.) mostly transparent. The material phase corresponds to liquid solids, foams,powders, suspensions etc.
+The nets were trained on the LabPics dataset for images of materials phases in vessels.
+Fully trained system can be download from [1](https://drive.google.com/file/d/1A4o48r912S-yAgZHa1dcg4qXCp8ffqSc/view?usp=sharing) or from [2](https://drive.google.com/file/d/1ZnEp_TwB0iUOVuSQ-YEXqfHzF5I08ryH/view?usp=sharing).
 
 
 # Running prediction
 
 
-1. Download the pre-trained system from [here]() or train the nets according to the instructions in the training section.
+1. Download the pre-trained system from [1](https://drive.google.com/file/d/1A4o48r912S-yAgZHa1dcg4qXCp8ffqSc/view?usp=sharing) or from [2](https://drive.google.com/file/d/1ZnEp_TwB0iUOVuSQ-YEXqfHzF5I08ryH/view?usp=sharing) or train the nets according to the instructions in the training section.
 2. Set path to the folder of the input image to the: InputDir parameter.
 3. Set path to the folder where the output annotations will be saved to the: OutDir parameter.
 4. Run.py 
