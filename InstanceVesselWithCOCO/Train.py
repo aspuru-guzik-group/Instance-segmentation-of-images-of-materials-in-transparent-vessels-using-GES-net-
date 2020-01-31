@@ -13,12 +13,12 @@ import LabPicsVesselInstanceReader
 import Evaluator
 ##################################Input training data folders#########################################################################################
 #.................................Main Input parametrs...........................................................................................
-COCO_InpuDIr="/scratch/gobi2/seppel/ConvertedCOCO/"
-ImageDir="/scratch/gobi1/seppel/DataSets/COCO_PANOPTIC/PanopticFull/train2017/"
+COCO_InpuDIr="/media/sagi/2T//DeleteLater/"
+ImageDir="/media/sagi/2T/Data_zoo/CocoReloaded/train2017/"
 MaskDir = {COCO_InpuDIr+"/All/"}
 FullSegDir = COCO_InpuDIr+"/SegMapDir/"
 
-LabPicsMainDir="/scratch/gobi2/seppel/LabPicsV1.2/"
+LabPicsMainDir="/media/sagi/DefectiveHD/LabPicsV1.2/"
 TrainDirLabPics=LabPicsMainDir+r"/Complex/Train/"
 TestDirLabPics=LabPicsMainDir+r"/Complex/Test/"
 #*******************************Other train parametes*********************************************************************************************************************
@@ -182,9 +182,10 @@ for itr in range(InitStep,MAX_ITERATION): # Main training loop
         Learning_Rate -= Learning_Rate_Decay
         if Learning_Rate <= 1e-6:
             Learning_Rate_Init -= 1e-6
-	    if Learning_Rate_Init <= 1e-6: Learning_Rate_Init = 2e-6
-            Learning_Rate = Learning_Rate_Init
-            Learning_Rate_Decay = Learning_Rate / 20
+        if Learning_Rate_Init <= 1e-6:
+                Learning_Rate_Init = 2e-6
+        Learning_Rate = Learning_Rate_Init
+        Learning_Rate_Decay = Learning_Rate / 20
         print("Learning Rate=" + str(Learning_Rate) + "   Learning_Rate_Init=" + str(Learning_Rate_Init))
         print(
             "======================================================================================================================")
