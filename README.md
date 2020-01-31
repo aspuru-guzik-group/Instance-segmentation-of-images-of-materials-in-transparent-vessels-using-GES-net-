@@ -1,4 +1,4 @@
-﻿# Hierarchical instance/semantic segmentation of materials and vessels 
+﻿# Hierarchical instance/semantic segmentation of materials inside mostly transpernt vessels  in chemistry labratory and other setting
 
 
 ## General
