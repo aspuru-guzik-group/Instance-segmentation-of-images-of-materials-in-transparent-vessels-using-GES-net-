@@ -2,7 +2,7 @@
 
 
 ## General
-Combination of three nets that act modular way to create semantically and instance aware segmentation of materials in a mostly transparent vessel for chemistry lab automation and other settings. Vessels correspond to (bottles cups, chemistry lab vessel.) mostly transparent. The material phase corresponds to liquid solids, foams, etc.
+Combination of three nets that act modular way to create semantically and instance aware segmentation of materials in a mostly transparent vessel for chemistry lab automation and other settings. Vessels correspond to (bottles cups, chemistry lab vessel, and other containers and glassware.) mostly transparent. The material phase corresponds to liquid solids, foams, etc.
 
 
 # Running prediction
