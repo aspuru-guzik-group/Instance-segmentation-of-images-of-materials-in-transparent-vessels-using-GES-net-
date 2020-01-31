@@ -22,7 +22,7 @@ Run in a hierarchical manner using several other nets. See the parent folder.
 
 
 ## Net structure
-The net is a [pointer net structure](https://arxiv.org/ftp/arxiv/papers/1902/1902.07810.pdf), a convolutional net that given an image a point in the image and ROI mask (Figure 1), return the segment region of the object instance containing the point within the ROI region, and a score that evaluates how good the predicted mask much the real object in the image in terms of IOU (intersection over union).
+The net is a [pointer net structure](https://arxiv.org/ftp/arxiv/papers/1902/1902.07810.pdf), a convolutional net that given an image a point in the image and ROI mask (Figure 1), return the segment region of the object instance containing the point within the ROI region, and a score that evaluates how good the predicted mask match the real phase region in the image in terms of IOU (intersection over union).
 
 
 ![](/InstanceMaterial/Figure1.png)
