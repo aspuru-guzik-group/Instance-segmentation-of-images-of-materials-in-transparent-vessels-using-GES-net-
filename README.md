@@ -43,9 +43,9 @@ See each of the subfolders for instruction to training the individual nets
 
 
 The hierarchical segmentation Figure 1, consist of 3 steps:
-1. Semantic segmentation: finding the region of the vessels, fill level, liquid solids, and other phases (not instance aware).
+1. Semantic segmentation: finding the region of the vessels, fill level, liquid, solids, foams,powder,gel, and other phases (not instance aware).
 2. Vessel instance segmentation: Splitting the region of the vessel region, into individual vessel instance regions.
-3. Material instance segmentation: splitting the region of each vessel region into individual material phase instance regions.
+3. Material instance segmentation: splitting the region of each vessel region into individual material phase instance regions, and assiging class to each phase (liquid/solid/foam...).
 # Nets 
 ## Semantic segmentation net
 Semantic net is in the Semantic folder. 
