@@ -17,7 +17,8 @@ Combination of three nets that act modular way to create semantically and instan
 ## Additional parameters:
 If you trained the net yourself set paths to the trained model weight in:
 SemanticNetTrainedModelPath,  InstanceVesselNetTrainedModelPath,  InstanceMaterialNetTrainedModelPath 
-for semantic vessel and materials net models respectively
+
+for semantic vessel and materials net models weights respectively
 
 VesIOUthresh: Quality threshold for predicted vessel instance to be accepted.
 
