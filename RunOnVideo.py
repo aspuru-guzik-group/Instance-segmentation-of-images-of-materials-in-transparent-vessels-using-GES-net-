@@ -1,4 +1,4 @@
-# Run instance and semantic segmentation on all images in folder and save results to output folder
+# Run instance and semantic segmentation on video  and save results to output video
 ###############################################################################################################################
 #-------------------------------------Input output folder-----------------------------------------------------------------------
 InputVideo=r"/media/sagi/2T/ChemScape/lab/1580404054104.mp4" #input video
