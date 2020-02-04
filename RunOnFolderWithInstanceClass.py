@@ -1,3 +1,4 @@
+# Run vesel and material instance predicion on all images in input folder
 ###############################################################################################################################
 #-------------------------------------Input output folder-----------------------------------------------------------------------
 InputDir="Input/"#/scratch/gobi2/seppel/Chemscape/ChemLabScapeDataset/Simple/Test/Image/" # Folder with input images
