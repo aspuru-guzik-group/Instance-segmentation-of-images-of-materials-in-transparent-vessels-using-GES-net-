@@ -1,17 +1,21 @@
 # Run instance and semantic segmentation on video  and save results to output video
+###############################33
+def show(Im):
+    cv2.imshow('Main', Im.astype(np.uint8))
+    cv2.waitKey(5000)
 ###############################################################################################################################
 #-------------------------------------Input output folder-----------------------------------------------------------------------
-InputVideo=r"/media/sagi/2T/ChemScape/lab/1580404054104.mp4" #input video
+InputVideo=r"/media/sagi/2T/ChemScape/YouTube/LiquidLiquid/Liquid-liquid-extraction-YouTube(2).mp4" #input video
 OutVideoName=InputVideo[:-4]+"_InstanceSeg.avi" #Output video that contain vessel filled  liquid and solid
 
 #--------------------------------------Running pramters-------------------------------------------------------------------------------
 UseGPU=True # run on GPU (true) or CPU (false) # Note this system is slow on GPU and very very slow on CPU
 FreezeBatchNorm_EvalON=True # Freeze the upddating of bath normalization statitics -->  use net.eval()
 
-VesIOUthresh=0.3#7 # IOU quality threshold for predicted vessel instance to be accepted
-MatIOUthresh=0.2#5# IOU quality threshold for predicted material instance to be accepted
-NumVessCycles=3 # Number of attempts to search for vessel instance, increase the probability to find vessel but also running time
-NumMatCycles=5  # Number of attempts to search for material instance, increase the probability to find material phase but also running time
+VesIOUthresh=0.7#7 # IOU quality threshold for predicted vessel instance to be accepted
+MatIOUthresh=0.5#5# IOU quality threshold for predicted material instance to be accepted
+NumVessCycles=4 # Number of attempts to search for vessel instance, increase the probability to find vessel but also running time
+NumMatCycles=6  # Number of attempts to search for material instance, increase the probability to find material phase but also running time
 UseIsVessel=False#True # Only If the vessel instance net was trained with COCO  it can predict whether the instance belongs to a vessel  which can help to remove a false segment
 IsVesThresh=0.5
 
@@ -100,7 +104,7 @@ else:
 # #MatNet.eval()
 
 print("Finished loading nets")
-
+OldAnnMap=None
 ############################################################################################################################################################################################################################################################
 ############################################################Split vessel region to vessel instances#########################################################################################################################################################
 def FindVesselInstances(Img,VesselsMask): # Split the VesselMask into vessel instances using GES net for instances
@@ -329,10 +333,12 @@ def FindMaterialInstances(Img,VesselsMask): # Split  vessel region to materials 
       ##                                                               MAIN
 ##############################################################################################################################################################################################################################################
 
-
+nframe=0
 while (cap.isOpened()): # Scan and annotate all images in input dir
 
     ret, Im = cap.read()
+    nframe += 1
+    if nframe % 3 > 0 or nframe < 100: continue
     if ret == False or Im is None:
         break
     h0,w0,d=Im.shape
@@ -432,25 +438,43 @@ while (cap.isOpened()): # Scan and annotate all images in input dir
                             # CatDic[AnnName]["PartCats"][NumPart]=[]
                             # CatDic[AnnName]["PartCats"][NumPart].append(nm)
 #------------------------------------Save instance map--------------------------------------------------------------------------------------------------------
-#    cv2.imwrite(OutIns+"/"+AnnName+".png",cv2.resize(OutAnnMap.astype(np.uint8),(w0,h0),interpolation=cv2.INTER_NEAREST))
-#-------------------------------------Save second type semantic maps--------------------------------------------------------------------------------------
+# --------------------Convert new annotation map to match old annotation map for frame consistancy basically phase Tracker--------------------------------------------------------------------------------------
+
+    if OldAnnMap is None:
+        OldAnnMap = OutAnnMap.copy()*0
+    for c in range(3):
+        ff=1
+        while (ff<=OutAnnMap[:, :, c].max()):
+            for ii in range(1,OldAnnMap[:, :, c].max()+1):
+                if ii == ff or ii*ff==0: continue
+                mold = (OldAnnMap[:, :, c] == ii)
+                mnew = (OutAnnMap[:, :, c] == ff)
+                if (mnew * mold).sum() / np.min([mold.sum(), mnew.sum()]) > 0.5:
+                    ti=(OutAnnMap[:, :, c] == ii)
+                    tf=(OutAnnMap[:, :, c] == ff)
+                    OutAnnMap[:, :, c][ti] = ff
+                    OutAnnMap[:, :, c][tf] = ii
+                    ff-=1
+            ff+=1
+    OldAnnMap = OutAnnMap.copy()
+    #-------------------------------------Save second type semantic maps--------------------------------------------------------------------------------------
     #---------------Save instance annotation  overlay on image for vizuallization---------------------------------------------------------------------------------------------------------
     h,w,d=Im.shape
     InsVizVessl = Im.copy()
     InsVizVessl[:, :, 0] = np.uint8((OutAnnMap[:, :, 2] * 21) % 255)
-    InsVizVessl[:, :, 1] = np.uint8((OutAnnMap[:, :, 2] * 67) % 255)
+    InsVizVessl[:, :, 1] = np.uint8((OutAnnMap[:, :, 2] * 667) % 255)
     InsVizVessl[:, :, 2] = np.uint8((OutAnnMap[:, :, 2] * 111) % 255)
     InsVizVessl = InsVizVessl * 0.8 + Im * 0.2
 
     InsVizMat = Im.copy()
     InsVizMat[:, :, 0] = np.uint8((OutAnnMap[:, :, 0] * 21) % 255)
-    InsVizMat[:, :, 1] = np.uint8((OutAnnMap[:, :, 0] * 67) % 255)
+    InsVizMat[:, :, 1] = np.uint8((OutAnnMap[:, :, 0] * 667) % 255)
     InsVizMat[:, :, 2] = np.uint8((OutAnnMap[:, :, 0] * 111) % 255)
     InsVizMat = InsVizMat * 0.8 + Im * 0.2
 
     InsVizVesPart = Im.copy()
     InsVizVesPart[:, :, 0] = np.uint8((OutAnnMap[:, :, 1] * 21) % 255)
-    InsVizVesPart[:, :, 1] = np.uint8((OutAnnMap[:, :, 1] * 67) % 255)
+    InsVizVesPart[:, :, 1] = np.uint8((OutAnnMap[:, :, 1] * 667) % 255)
     InsVizVesPart[:, :, 2] = np.uint8((OutAnnMap[:, :, 1] * 111) % 255)
     InsVizVesPart = InsVizVesPart * 0.8 + Im * 0.2
     cv2.putText(InsVizVessl, "Vessels", (int(w / 3), int(h / 6)), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 255, 0), 2, cv2.LINE_AA)
