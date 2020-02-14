@@ -441,21 +441,27 @@ while (cap.isOpened()): # Scan and annotate all images in input dir
 # --------------------Convert new annotation map to match old annotation map for frame consistancy basically phase Tracker--------------------------------------------------------------------------------------
 
     if OldAnnMap is None:
-        OldAnnMap = OutAnnMap.copy()*0
+        OldAnnMap = OutAnnMap.copy() * 0
     for c in range(3):
-        ff=1
-        while (ff<=OutAnnMap[:, :, c].max()):
-            for ii in range(1,OldAnnMap[:, :, c].max()+1):
-                if ii == ff or ii*ff==0: continue
+        ff = 1
+        xx = 0
+        while (ff <= OutAnnMap[:, :, c].max()):
+            xx += 1
+            for ii in range(1, OldAnnMap[:, :, c].max() + 1):
+                #            print("kkkkk")
+                if ii == ff or ii * ff == 0: continue
                 mold = (OldAnnMap[:, :, c] == ii)
                 mnew = (OutAnnMap[:, :, c] == ff)
                 if (mnew * mold).sum() / np.min([mold.sum(), mnew.sum()]) > 0.5:
-                    ti=(OutAnnMap[:, :, c] == ii)
-                    tf=(OutAnnMap[:, :, c] == ff)
+                    #       print("ddddd")
+                    ti = (OutAnnMap[:, :, c] == ii)
+                    tf = (OutAnnMap[:, :, c] == ff)
                     OutAnnMap[:, :, c][ti] = ff
                     OutAnnMap[:, :, c][tf] = ii
-                    ff-=1
-            ff+=1
+                    ff -= 1
+                    break
+            ff += 1
+            if xx > 100: break
     OldAnnMap = OutAnnMap.copy()
     #-------------------------------------Save second type semantic maps--------------------------------------------------------------------------------------
     #---------------Save instance annotation  overlay on image for vizuallization---------------------------------------------------------------------------------------------------------
