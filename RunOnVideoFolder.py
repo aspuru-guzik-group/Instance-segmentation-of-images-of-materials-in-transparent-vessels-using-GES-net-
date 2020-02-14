@@ -514,5 +514,3 @@ for InputVideo in os.listdir(InputDir):
 
 
 
-
-
