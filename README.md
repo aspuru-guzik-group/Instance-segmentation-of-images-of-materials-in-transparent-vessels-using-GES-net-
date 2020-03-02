@@ -82,4 +82,4 @@ Figure 1: GES net instance segmentation for materials and vessels
 
 
 ![](/Figure3.png)
-Figure 3: Some results.
+Figure 3: Some results (All images taken from the [NileRed youtube channel](https://www.youtube.com/user/TheRedNile).
