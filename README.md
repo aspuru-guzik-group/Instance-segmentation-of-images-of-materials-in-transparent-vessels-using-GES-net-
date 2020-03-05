@@ -4,7 +4,7 @@
 ## General
 Combination of three nets that act modular way to create semantic and instance aware segmentation of materials in a mostly transparent vessel for chemistry lab and other settings. Vessels correspond to (bottles cups, chemistry lab labware, and other containers and glassware.) mostly transparent. The material phase corresponds to liquid solids, foams,powders, suspensions etc.
 
-The nets were trained on the LabPics dataset for images of materials phases inside vessels (available [Here](https://drive.google.com/file/d/1TZao7JDzxcJr_hMqYHLRcV2N0UHoH2c1/view?usp=sharing) or [here](https://drive.google.com/file/d/1gfaM_6eZjtg7dkFShGl1gIfsXzj1KjIX/view?usp=sharing)).
+The nets were trained on the LabPics dataset for images of materials phases inside vessels (available [Here](https://zenodo.org/record/3697452).
 
 Fully trained system can be download from [1](https://drive.google.com/file/d/1A4o48r912S-yAgZHa1dcg4qXCp8ffqSc/view?usp=sharing) or from [2](https://drive.google.com/file/d/1ZnEp_TwB0iUOVuSQ-YEXqfHzF5I08ryH/view?usp=sharing).
 
