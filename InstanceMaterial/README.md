@@ -2,7 +2,7 @@
 
 
 ## General
-The net split region of the vessel in the image to the individual material phases, and assign class and score for each phase (Figure 1). This net runs as part of the hierarchical model that is described in the parent folder. Training is done on the [LabPics Dataset](https://drive.google.com/file/d/1TZao7JDzxcJr_hMqYHLRcV2N0UHoH2c1/view?usp=sharing)
+The net split region of the vessel in the image to the individual material phases, and assign class and score for each phase (Figure 1). This net runs as part of the hierarchical model that is described in the parent folder. Training is done on the [LabPics Dataset](https://zenodo.org/record/3697452)
 
 
 ## Running folder
