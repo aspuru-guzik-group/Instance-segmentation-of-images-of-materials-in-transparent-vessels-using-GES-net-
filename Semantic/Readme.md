@@ -68,7 +68,7 @@ There are two training options: one is to train using only with LabPics dataset,
 
 
 # Training simple (only LabPics)
-1. Download the LabPics data set from [Here](https://drive.google.com/file/d/1TZao7JDzxcJr_hMqYHLRcV2N0UHoH2c1/view?usp=sharing) or [here](https://drive.google.com/file/d/1gfaM_6eZjtg7dkFShGl1gIfsXzj1KjIX/view?usp=sharing)
+1. Download the LabPics data set from [Here](https://zenodo.org/record/3697452).
 2. Open the Train.py script
 3. Set the path to the LabPics dataset main folder to the TrainFolderPath parameter.
 4. Run the script 
@@ -84,7 +84,7 @@ There are two training options: one is to train using only with LabPics dataset,
 
 ## Training second option (With LabPics dataset and Vessels from  the COCO panoptic dataset)
 ### Downloading datasets
-1. Download the LabPics data set from [Here](https://drive.google.com/file/d/1TZao7JDzxcJr_hMqYHLRcV2N0UHoH2c1/view?usp=sharing) or [here](https://drive.google.com/file/d/1gfaM_6eZjtg7dkFShGl1gIfsXzj1KjIX/view?usp=sharing)
+1. Download the LabPics data set from [Here](https://zenodo.org/record/3697452).
 
 
 2. Download the [COCO panoptic dataset](http://cocodataset.org/#download) annotation and train images.
@@ -134,7 +134,7 @@ TrainingDataGenerationCOCO folder: Convert COCO dataset for training data.
 
 
 # Notes/Thanks
-The images for the [LabPics dataset](https://drive.google.com/file/d/1TZao7JDzxcJr_hMqYHLRcV2N0UHoH2c1/view?usp=sharing)    were taken from Youtube channels such as [NileRide](https://www.youtube.com/user/TheRedNile), [NurdRage](https://www.youtube.com/user/NurdRage), and [Chemplayer](https://www.youtube.com/channel/UCsJHe4uMbquncMpe1PiLa2A), [douglas lab](https://www.youtube.com/channel/UCR3CEAL-y3CoMf4oJOJgtEw), [Koen2All](https://www.youtube.com/user/koen2all) and from Instagram channels such as Chemistrylife, organic Chemistry lab, Chemistry and me, Ministry Of Chemistry , vacuum distillation, Cocktail.
+The images for the [LabPics dataset](https://zenodo.org/record/3697452)    were taken from Youtube channels such as [NileRide](https://www.youtube.com/user/TheRedNile), [NurdRage](https://www.youtube.com/user/NurdRage), and [Chemplayer](https://www.youtube.com/channel/UCsJHe4uMbquncMpe1PiLa2A), [douglas lab](https://www.youtube.com/channel/UCR3CEAL-y3CoMf4oJOJgtEw), [Koen2All](https://www.youtube.com/user/koen2all) and from Instagram channels such as Chemistrylife, organic Chemistry lab, Chemistry and me, Ministry Of Chemistry , vacuum distillation, Cocktail.
 
 Work was done in the Matter Lab (Alan Aspuru Guzik group) and the Vector institute Toronto.
 
