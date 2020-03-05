@@ -138,7 +138,7 @@ The images for the [LabPics dataset](https://zenodo.org/record/3697452)    were 
 
 Work was done in the Matter Lab (Alan Aspuru Guzik group) and the Vector institute Toronto.
 
-The [LabPics dataset](https://drive.google.com/file/d/1gfaM_6eZjtg7dkFShGl1gIfsXzj1KjIX/view?usp=sharing) was made by Mor Bismuth.
+The [LabPics dataset](https://zenodo.org/record/3697452) was made by Mor Bismuth.
 
 # Links
 LabPics dataset for annotated images of liquid, solid and foam materials in mostly transperent vessels in Lab setting and general everyday setting can be download from [here](https://drive.google.com/file/d/1TZao7JDzxcJr_hMqYHLRcV2N0UHoH2c1/view?usp=sharing) or [here](https://drive.google.com/file/d/1gfaM_6eZjtg7dkFShGl1gIfsXzj1KjIX/view?usp=sharing)
