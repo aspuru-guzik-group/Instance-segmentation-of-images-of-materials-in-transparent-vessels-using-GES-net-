@@ -2,7 +2,7 @@
 
 
 ## General
-The net finds vessel instances in the image  (as well as all other objects and none object region) in the image. Vessels consist of general glass or transparent vessels, such as glass bottles and other glassware used in a lab (might also work on none transparent objects). This net runs as part of the hierarchical model that is described in the parent folder. Training is done on a combination of the [LabPics Dataset](https://drive.google.com/file/d/1TZao7JDzxcJr_hMqYHLRcV2N0UHoH2c1/view?usp=sharing) and the [COCO dataset](http://cocodataset.org/#download) 
+The net finds vessel instances in the image  (as well as all other objects and none object region) in the image. Vessels consist of general glass or transparent vessels, such as glass bottles and other glassware used in a lab (might also work on none transparent objects). This net runs as part of the hierarchical model that is described in the parent folder. Training is done on a combination of the [LabPics Dataset](https://zenodo.org/record/3697452) and the [COCO dataset](http://cocodataset.org/#download) 
 
 
 ## Running folder
