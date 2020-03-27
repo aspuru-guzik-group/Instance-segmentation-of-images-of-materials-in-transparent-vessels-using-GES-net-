@@ -1,5 +1,5 @@
 ﻿# Hierarchical instance/semantic segmentation of materials inside mostly transpernt vessels  in chemistry labratory and other setting
-
+See Paper [Computer Vision for Recognition of Materials and Vessels in Chemistry Lab Settings and the Vector-LabPics Dataset](https://chemrxiv.org/articles/Computer_Vision_for_Recognition_of_Materials_and_Vessels_in_Chemistry_Lab_Settings_and_the_Vector-LabPics_Dataset/11930004) for more details on the methods and dataset.
 
 ## General
 Combination of three nets that act modular way to create semantic and instance aware segmentation of materials in a mostly transparent vessel for chemistry lab and other settings. Vessels correspond to (bottles cups, chemistry lab labware, and other containers and glassware.) mostly transparent. The material phase corresponds to liquid solids, foams,powders, suspensions etc.
